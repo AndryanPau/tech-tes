@@ -1,20 +1,89 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<h1> Tech Test Andry</h1>
+<div class="parent">
+  <h1>TEST 1</h1>
+  <ng-container *ngFor="let data of datas[0].data.response.billdetails; let i = index;">
+    <div class="card" *ngIf="data.body[0].DENOM >= 100000">
+      <p>{{data.title}}</p>
+      <p>{{data.body[0].DENOM}}</p>
+    </div>
+  </ng-container>
 
+  <h1>TEST 2</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <div>
+        <label for="email">
+          Email
+        </label>
+        <input id="email" type="text" formControlName="email" placeholder="Enter Email">
+      </div>
+    
+      <div>
+        <label for="pass">
+          Password
+        </label>
+        <input id="pass" type="text" formControlName="pass" placeholder="Enter Password">
+      </div>
+    
+      <button class="button" type="submit">Login</button>
+
+    </form>
+
+    <h1>TEST 3</h1>
+    <table border="1">
+      <tr>
+        <td>No</td>
+        <td>Merk</td>
+        <td>Seri</td>
+        <td>Silinder</td>
+        <td>Grade</td>
+        <td>Model</td>
+        <td>Transmisi</td>
+        <td>Bahanbakar</td>
+        <td>Tahun</td>
+        <td>Nopolisi</td>
+        <td>Norangka</td>
+        <td>Nomesin</td>
+        <td>Nokeur</td>
+        <td>Nostnk</td>
+        <td>Warna</td>
+        <td>Km</td>
+        <td colspan="16">Detail</td>
+        
+      </tr>
+      <tr *ngFor="let datalist of datalists; let i = index;">
+        <td>{{i + 1}}</td>
+        <td>{{datalist.merk}}</td>
+        <td>{{datalist.seri}}</td>
+        <td>{{datalist.silinder}}</td>
+        <td>{{datalist.grade}}</td>
+        <td>{{datalist.model}}</td>
+        <td>{{datalist.transmisi}}</td>
+        <td>{{datalist.bahanbakar}}</td>
+        <td>{{datalist.tahun}}</td>
+        <td>{{datalist.nopolisi}}</td>
+        <td>{{datalist.norangka}}</td>
+        <td>{{datalist.nomesin}}</td>
+        <td>{{datalist.nokeur}}</td>
+        <td>{{datalist.nostnk}}</td>
+        <td>{{datalist.warna}}</td>
+        <td>{{datalist.km}}</td>
+
+        <td>{{datalist.schedule.schedule.id}}</td>
+        <td>{{datalist.schedule.schedule.company_id}}</td>
+        <td>{{datalist.schedule.schedule.CompanyName}}</td>
+        <td>{{datalist.schedule.schedule.CompanyAddress}}</td>
+        <td>{{datalist.schedule.schedule.CompanyPhone}}</td>
+        <td>{{datalist.schedule.schedule.interval}}</td>
+        <td>{{datalist.schedule.schedule.type}}</td>
+        <td>{{datalist.schedule.schedule.item_id}}</td>
+        <td>{{datalist.schedule.schedule.ItemName}}</td>
+        <td>{{datalist.schedule.schedule.limit}}</td>
+        <td>{{datalist.schedule.schedule.waktu}}</td>
+        <td>{{datalist.schedule.schedule.duration}}</td>
+        <td>{{datalist.schedule.schedule.io_number}}</td>
+        <td>{{datalist.schedule.schedule.done}}</td>
+        <td>{{datalist.schedule.schedule.localDate}}</td>
+      </tr>
+    </table>
+</div>
